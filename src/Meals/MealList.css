@@ -1,0 +1,16 @@
+.meal-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
+    background-color: #8a818182;
+    border-radius: 20px;
+    color: black;
+    width: 679px;
+    height: 455px;
+    margin-top: 132px;
+    margin-bottom: 40px;
+    margin-left: 200px;
+    list-style: none;
+}

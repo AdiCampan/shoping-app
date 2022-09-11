@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import Header from './Header/Header';
 import './App.css';
+import MealList from './Meals/MealList';
+import foodTable from './assets/green-food.jpg';
+import Cart from './Header/Cart';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cart />
+      <Header />
+      {/* <img className='image' src={foodTable} alt='a table with food !' /> */}
+      <MealList />
     </div>
   );
 }
