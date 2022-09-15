@@ -3,7 +3,7 @@ import React from 'react';
 import CartButton from './CartButton';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ onShowCart }) => {
   return (
     <>
       <div className='header-bar'>
@@ -12,7 +12,7 @@ const Header = () => {
           <div>We bring you your favorite food</div>
         </div>
 
-        <CartButton />
+        <CartButton onClick={onShowCart}/>
 
       </div>
     </>

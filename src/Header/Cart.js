@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from '../Modal'
 
-const Cart = () => {
+const Cart = ({ onCloseCart }) => {
   const cartItems = <ul>{
     [{
       id: 'f1',
@@ -13,14 +13,14 @@ const Cart = () => {
   }</ul>
 
   return (
-    <Modal>
+    <Modal onClose={onCloseCart}>
       <div>{cartItems}</div>
       <div>
         <span>Total Amount</span>
         <span>20</span>
       </div>
       <div>
-        <button>Close</button>
+        <button onClick={onCloseCart}>Close</button>
         <button>Order</button>
       </div>
     </Modal>
