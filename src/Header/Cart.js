@@ -2,22 +2,24 @@ import React, { useState, useContext } from 'react'
 import CartContext from '../Store/CartContext';
 import Modal from '../Modal';
 import './Cart.css';
-import { FaTrash } from "react-icons/fa";
+import { TiDeleteOutline } from "react-icons/ti";
 
 const Cart = ({ onCloseCart }) => {
   const { cart, clearCart, removeProduct } = useContext(CartContext);
 
   const cartItems = cart.map((item) =>
     <li className='cart-items' key={item.id} >
-      {item.quantity} X {item.title} {"$"}{item.price * item.quantity}
-      <FaTrash className='delete-button' onClick={() => removeProduct(item.id)} />
+      <div className='item-title'>
+        <div >{item.quantity} X {item.title} {"$"}{item.price * item.quantity}</div>
+        <div><TiDeleteOutline className='delete-button' onClick={() => removeProduct(item.id)} /></div>
+      </div>
       <hr />
     </li>);
 
   const totalPrice = cart.map(item => item.price * item.quantity).reduce((prev, curr) => prev + curr, 0);
   const fixedPrice = totalPrice.toFixed(2)
 
- 
+
 
   return (
     <Modal onClose={onCloseCart}>

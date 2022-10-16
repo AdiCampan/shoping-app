@@ -12,6 +12,11 @@
 .image-item{
     width: 100px;
     height: 100px;
+    transition: transform .2s;
+}
+.image-item:hover{
+    cursor: pointer;
+    transform: scale(1.2); 
 }
 .input-container{
     display: flex;
@@ -31,6 +36,12 @@
     border: none;
     height: 30px;
     cursor: pointer;
+    transition: transform .2s, background-color 1s;
+}
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: #f869c8;
 }
 .meal-title{
     font-weight:initial;

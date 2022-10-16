@@ -1,10 +1,17 @@
 .cart-items{
     margin-left: 20px;
     font-weight: bold;
+    list-style-type: none;
+}
+.item-title{
+    display: flex;
+    justify-content: space-between;
 }
 .delete-button{
-    margin-right: 0px;
-    position: absolute;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
 }
 
 .cartModal-button{
