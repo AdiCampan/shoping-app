@@ -6,7 +6,6 @@ import { FaTrash } from "react-icons/fa";
 
 const Cart = ({ onCloseCart }) => {
   const { cart, clearCart, removeProduct } = useContext(CartContext);
-  const [showClearBtn, setShowClearBtn] = useState(true);
 
   const cartItems = cart.map((item) =>
     <li className='cart-items' key={item.id} >
@@ -18,9 +17,7 @@ const Cart = ({ onCloseCart }) => {
   const totalPrice = cart.map(item => item.price * item.quantity).reduce((prev, curr) => prev + curr, 0);
   const fixedPrice = totalPrice.toFixed(2)
 
-  if (cart.length === 0) {
-    setShowClearBtn(false)
-  }
+ 
 
   return (
     <Modal onClose={onCloseCart}>
@@ -31,9 +28,9 @@ const Cart = ({ onCloseCart }) => {
           <span>$ {fixedPrice}</span>
         </div>
         <div>
-          {showClearBtn && <button className='cartModal-button' onClick={clearCart}>Clear All</button>}
+          {cart.length > 0 && <button className='cartModal-button' onClick={clearCart}>Clear All</button>}
           <button className='cartModal-button' onClick={onCloseCart}>Close</button>
-          <button className='cartModal-button'>Order</button>
+          {cart.length > 0 && <button className='cartModal-button'>Order</button>}
 
         </div>
       </div>

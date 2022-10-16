@@ -9,7 +9,7 @@
   align-items: center;
   border-radius: 25px;
   font-weight: bold;
-  transition: width 1s, height 1s;
+  transition: transform .2s;
 }
 
 .bump {
@@ -55,7 +55,6 @@
 }
 
 .cart-button:hover {
-  width: 230px;
-  height: 50px;
   cursor: pointer;
+  transform: scale(1.2);
 }
