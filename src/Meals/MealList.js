@@ -48,13 +48,9 @@ const FOOD_LIST = [
 ]
 
 const MealList = () => {
-  const list = FOOD_LIST.map((food) => <li>
+  const list = FOOD_LIST.map((food) => <li key= {food.id}>
     <MealItem
-    id={food.id}
-    key={food.id}
-    title={food.title}
-    image={food.image}
-    price={food.price}
+    food = {food}
     />
   </li>)
 

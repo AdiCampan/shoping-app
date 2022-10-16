@@ -32,3 +32,7 @@
     height: 30px;
     cursor: pointer;
 }
+.meal-title{
+    font-weight:initial;
+    font-family: fantasy;
+}

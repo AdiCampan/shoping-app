@@ -2,14 +2,14 @@ import { useState } from 'react';
 import Header from './Header/Header';
 import './App.css';
 import MealList from './Meals/MealList';
-import foodTable from './assets/green-food.jpg';
 import Cart from './Header/Cart';
+import { CartProvider } from './Store/CartContext';
 
 function App() {
 
-  const[openModal,setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  const showCarthandler = () =>{
+  const showCarthandler = () => {
     setOpenModal(true);
   }
   const hideCartHanler = () => {
@@ -17,12 +17,13 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {openModal && <Cart  onCloseCart={hideCartHanler}/>}
-      <Header  onShowCart={showCarthandler}/>
-      {/* <img className='image' src={foodTable} alt='a table with food !' /> */}
-      <MealList />
-    </div>
+    <CartProvider>
+      <div className="App">
+        {openModal && <Cart onCloseCart={hideCartHanler} />}
+        <Header onShowCart={showCarthandler} />
+        <MealList />
+      </div>
+    </CartProvider>
   );
 }
 
